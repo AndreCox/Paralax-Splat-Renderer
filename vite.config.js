@@ -1,8 +1,7 @@
+// vite.config.js
 import { defineConfig } from "vite";
 import path from "path";
 
-// Enable cross-origin isolation for SharedArrayBuffer usage in workers.
-// This sets the necessary HTTP headers during `vite` dev server.
 export default defineConfig({
   // Set base to your repository name for GitHub Pages
   base: "/Paralax-Splat-Renderer/",
@@ -25,5 +24,23 @@ export default defineConfig({
     alias: {
       three: path.resolve(__dirname, "node_modules/three"),
     },
+  },
+
+  build: {
+    rollupOptions: {
+      output: {
+        // Ensure proper module format
+        format: "es",
+      },
+    },
+  },
+
+  optimizeDeps: {
+    include: [
+      "three",
+      "three/examples/jsm/loaders/GLTFLoader.js",
+      "three/examples/jsm/controls/OrbitControls.js",
+      "@sparkjsdev/spark",
+    ],
   },
 });
