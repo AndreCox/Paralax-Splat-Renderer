@@ -56,7 +56,7 @@ function init() {
   // (debug helpers removed)
 
   // Load Gaussian Splat using Spark
-  const splatPath = "/splat.ply";
+  const splatPath = import.meta.env.BASE_URL + "splat.ply";
 
   try {
     splatMesh = new SplatMesh({ url: splatPath });

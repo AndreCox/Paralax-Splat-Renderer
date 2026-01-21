@@ -1,6 +1,9 @@
 // vite.config.js
 import { defineConfig } from "vite";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   // Set base to your repository name for GitHub Pages
@@ -22,25 +25,18 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      three: path.resolve(__dirname, "node_modules/three"),
+      three: path.resolve(__dirname, "./node_modules/three"),
     },
   },
 
   build: {
+    target: "esnext",
+    minify: "esbuild",
     rollupOptions: {
       output: {
-        // Ensure proper module format
         format: "es",
+        manualChunks: undefined,
       },
     },
-  },
-
-  optimizeDeps: {
-    include: [
-      "three",
-      "three/examples/jsm/loaders/GLTFLoader.js",
-      "three/examples/jsm/controls/OrbitControls.js",
-      "@sparkjsdev/spark",
-    ],
   },
 });
