@@ -23,19 +23,12 @@ export default defineConfig({
     },
   },
 
-  resolve: {
-    alias: {
-      three: path.resolve(__dirname, "./node_modules/three"),
-    },
-  },
-
   build: {
     target: "esnext",
     minify: "esbuild",
     rollupOptions: {
       output: {
         format: "es",
-        manualChunks: undefined,
       },
     },
   },
