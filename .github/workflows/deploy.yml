@@ -23,8 +23,12 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
+      - name: Add .nojekyll file
+        run: touch dist/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
