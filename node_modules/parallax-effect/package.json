@@ -1,0 +1,39 @@
+{
+  "name": "parallax-effect",
+  "version": "2.1.1",
+  "description": "Parallax effect for web using face tracking. Image-based 3d display with tfjs.",
+  "main": "src/parallax-effect.js",
+  "browser": "dist/parallax-effect.js",
+  "module": "dist/parallax-effect.mjs",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "start": "servez -S"
+  },
+  "dependencies": {
+    "fetch-inject": "^2.0.4"
+  },
+  "devDependencies": {
+    "rollup": "^2.18.1",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "servez": "^1.10.0"
+  },
+  "keywords": [
+    "3d",
+    "parallax",
+    "deepview",
+    "display",
+    "face",
+    "tracking",
+    "view",
+    "motion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munrocket/parallax-effect.git"
+  },
+  "author": "munrocket",
+  "license": "MIT"
+}
